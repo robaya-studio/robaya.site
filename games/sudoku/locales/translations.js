@@ -68,7 +68,7 @@ window.sudokuTranslations = {
     backToGame: "← Back to Sudoku",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    email: "rtat.store@gmail.com"
+    email: "robaya.studio@gmail.com"
   },
   
   ru: {
@@ -139,7 +139,7 @@ window.sudokuTranslations = {
     backToGame: "← Назад к Судоку",
     privacy: "Политика конфиденциальности",
     terms: "Лицензионное соглашение (EULA)",
-    email: "rtat.store@gmail.com"
+    email: "robaya.studio@gmail.com"
   }
 };
 

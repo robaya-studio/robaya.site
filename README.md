@@ -264,15 +264,17 @@ window.newGameTranslations = {
 В `index.html` добавьте карточку:
 
 ```html
-<div class="game-card clickable">
-  <a href="games/new-game/" class="game-link">
+<div class="game-card">
+  <a href="games/new-game/" class="game-card-link">
     <div class="game-icon">🎮</div>
     <h3 data-i18n="newGameTitle">New Game</h3>
     <p data-i18n="newGameDescription">Description of the new game</p>
-    <div class="game-actions">
-      <span class="view-details" data-i18n="viewDetails">View Details →</span>
-    </div>
   </a>
+  <div class="game-actions">
+    <a href="https://apps.apple.com/app/idXXXXXXXXXX" class="download-btn" target="_blank" rel="noopener">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
+    </a>
+  </div>
 </div>
 ```
 

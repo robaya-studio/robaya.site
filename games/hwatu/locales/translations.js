@@ -34,6 +34,7 @@ window.hwatuTranslations = {
     downloadTitle: "Download Now",
     downloadDesc: "Hwatu is now available! Download and play your favorite game anytime!",
     downloadAppStore: "Download on App Store",
+    soonBadge: "Soon",
 
     // Privacy Policy
     hwatuPrivacyTitle: "Privacy Policy - Hwatu",
@@ -65,13 +66,13 @@ window.hwatuTranslations = {
     privacyRestriction: "Restriction: Restrict the processing of your data in certain circumstances.",
     privacyObjection: "Objection: Object to data processing based on legitimate interests or for advertising purposes.",
     privacyPortability: "Data Portability: Request transfer of your data to another data controller in a machine-readable format.",
-    privacyExerciseRights: "To exercise these rights, please contact me at rtat.store@gmail.com.",
+    privacyExerciseRights: "To exercise these rights, please contact me at robaya.studio@gmail.com.",
     privacyCCPARights: "6. California Consumer Rights (CCPA)",
     privacyCCPARightsText: "Under CCPA, you have the right to:",
     privacyAccessRequest: "Access Request: Request information about the personal data I have collected about you, including the sources of data collection and the parties with whom the data has been shared.",
     privacyDeletionRequest: "Deletion Request: Request deletion of your personal data.",
     privacyOptOut: "Opt-Out of Sale: Opt out of the sale of your personal data, if applicable.",
-    privacyExerciseCCPARights: "To exercise these rights, please contact me at rtat.store@gmail.com.",
+    privacyExerciseCCPARights: "To exercise these rights, please contact me at robaya.studio@gmail.com.",
     privacyDataSharing: "7. Data Sharing",
     privacyDataSharingText: "I do not sell your personal information to third parties, except in the following cases:",
     privacyServiceProviders: "Service Providers: I may share data with third parties who assist in processing payments or serving ads. These parties are obligated to protect your data.",
@@ -85,7 +86,7 @@ window.hwatuTranslations = {
     privacyChanges: "11. Changes to This Privacy Policy",
     privacyChangesText: "I may update this Privacy Policy from time to time. Updates will be posted in the Game or on my website. Continued use of the Game after changes signifies your acceptance of the revised policy.",
     privacyContact: "12. Contact Information",
-    privacyContactText: "If you have any questions about this Privacy Policy, please contact me at rtat.store@gmail.com.",
+    privacyContactText: "If you have any questions about this Privacy Policy, please contact me at robaya.studio@gmail.com.",
     privacyGoverningLaw: "13. Governing Law",
     privacyGoverningLawText: "This Privacy Policy is governed by and construed in accordance with the laws of European Union, in compliance with the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA).",
     
@@ -128,7 +129,7 @@ window.hwatuTranslations = {
     backToGame: "← Back to Hwatu",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    email: "rtat.store@gmail.com"
+    email: "robaya.studio@gmail.com"
   },
   
   ru: {
@@ -165,6 +166,7 @@ window.hwatuTranslations = {
     downloadTitle: "Скачать сейчас",
     downloadDesc: "Хато уже доступно! Скачайте и играйте Вашу любимую игру в любое время!",
     downloadAppStore: "Скачать в App Store",
+    soonBadge: "Скоро",
 
     // Privacy Policy
     hwatuPrivacyTitle: "Политика конфиденциальности - Хато",
@@ -196,13 +198,13 @@ window.hwatuTranslations = {
     privacyRestriction: "Ограничение обработки: Ограничивать обработку данных в определенных случаях.",
     privacyObjection: "Возражение: Возражать против обработки данных на основе законных интересов или для рекламы.",
     privacyPortability: "Переносимость данных: Запрашивать передачу данных другому контроллеру в машиночитаемом формате.",
-    privacyExerciseRights: "Чтобы воспользоваться этими правами, пожалуйста, свяжитесь со мной по адресу rtat.store@gmail.com.",
+    privacyExerciseRights: "Чтобы воспользоваться этими правами, пожалуйста, свяжитесь со мной по адресу robaya.studio@gmail.com.",
     privacyCCPARights: "6. Права потребителей Калифорнии (CCPA)",
     privacyCCPARightsText: "В соответствии с CCPA вы имеете право:",
     privacyAccessRequest: "Запрос о доступе: Запрашивать информацию о том, какие персональные данные я собрал о вас, из каких источников они были собраны и с кем были поделены.",
     privacyDeletionRequest: "Запрос на удаление: Запрашивать удаление ваших персональных данных.",
     privacyOptOut: "Отказ от продажи: Отказаться от продажи ваших персональных данных, если это применимо.",
-    privacyExerciseCCPARights: "Чтобы воспользоваться этими правами, пожалуйста, свяжитесь со мной по адресу rtat.store@gmail.com.",
+    privacyExerciseCCPARights: "Чтобы воспользоваться этими правами, пожалуйста, свяжитесь со мной по адресу robaya.studio@gmail.com.",
     privacyDataSharing: "7. Передача данных",
     privacyDataSharingText: "Я не передаю ваши данные третьим лицам, за исключением следующих случаев:",
     privacyServiceProviders: "Поставщики услуг: Я могу делиться данными с третьими сторонами, которые помогают в обработке платежей или предоставлении рекламы. Эти компании обязаны обеспечивать конфиденциальность ваших данных.",
@@ -216,7 +218,7 @@ window.hwatuTranslations = {
     privacyChanges: "11. Изменения в Политике конфиденциальности",
     privacyChangesText: "Я могу обновлять эту Политику конфиденциальности. Обновления будут размещены в Игре или на моем веб-сайте. Продолжение использования Игры после изменений означает принятие новой версии Политики.",
     privacyContact: "12. Контактная информация",
-    privacyContactText: "Если у вас есть вопросы по поводу этой Политики конфиденциальности, пожалуйста, свяжитесь со мной по адресу rtat.store@gmail.com.",
+    privacyContactText: "Если у вас есть вопросы по поводу этой Политики конфиденциальности, пожалуйста, свяжитесь со мной по адресу robaya.studio@gmail.com.",
     privacyGoverningLaw: "13. Применимое право",
     privacyGoverningLawText: "Настоящая Политика конфиденциальности регулируется законодательством Европейского Союза, в соответствии с Общим регламентом по защите данных (GDPR) и Законом о конфиденциальности потребительских данных Калифорнии (CCPA).",
     
@@ -259,7 +261,7 @@ window.hwatuTranslations = {
     backToGame: "← Назад к Хато",
     privacy: "Политика конфиденциальности",
     terms: "Лицензионное соглашение (EULA)",
-    email: "rtat.store@gmail.com"
+    email: "robaya.studio@gmail.com"
   }
 };
 

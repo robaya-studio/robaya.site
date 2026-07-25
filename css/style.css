@@ -88,14 +88,43 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Language switcher styles */
-.lang-switch {
+/* Top-right control cluster: theme toggle + language switcher */
+.top-controls {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+  background: var(--lang-bg);
+  color: var(--lang-text);
+  border: 2px solid var(--lang-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  background: var(--lang-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: var(--border-hover);
+}
+
+/* Language switcher styles */
 .lang-switch a {
   display: inline-block;
   margin: 0 5px;
@@ -257,24 +286,8 @@ body {
   background: var(--card-bg);
 }
 
-/* Clickable game cards */
-.game-card.clickable {
-  cursor: pointer;
-}
-
-.game-card.clickable:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--card-hover-shadow);
-  border-color: var(--border-hover);
-}
-
-.game-link {
-  text-decoration: none;
-  color: inherit;
+.game-card-link {
   display: block;
-}
-
-a.game-link.game-card {
   text-decoration: none;
   color: inherit;
 }
@@ -361,6 +374,7 @@ img.game-icon {
 
 /* Download button */
 .download-btn {
+  position: relative;
   display: inline-block;
   transition: transform 0.2s;
 }
@@ -369,26 +383,31 @@ img.game-icon {
   transform: scale(1.05);
 }
 
-/* Footer */
-footer {
-  margin-top: 6rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
-  text-align: center;
-  background: var(--footer-bg);
+/* Row of multiple store badges */
+.download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-footer a {
-  color: var(--footer-link);
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--footer-link-hover);
-  text-decoration: underline;
+/* Small "Soon" ribbon for a store badge that isn't live yet */
+.soon-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 /* Game page specific styles */
@@ -439,6 +458,7 @@ footer a:hover {
 }
 
 .download-btn-large {
+  position: relative;
   display: inline-block;
   /* margin: 2rem 0; */
   transition: transform 0.2s;
@@ -924,34 +944,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Game footer */
-.game-footer {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
-  text-align: center;
-}
-
-.game-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.game-links a {
-  color: var(--footer-link);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.game-links a:hover {
-  color: var(--footer-link-hover);
-  text-decoration: underline;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -978,13 +970,14 @@ footer a:hover {
     position: static;
   }
   
-  .lang-switch {
+  .top-controls {
     position: relative;
     top: auto;
     right: auto;
+    justify-content: center;
     margin-bottom: 2rem;
   }
-  
+
   .game-icon-large {
     font-size: 4rem;
   }

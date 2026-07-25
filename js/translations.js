@@ -26,12 +26,13 @@ window.translations = {
     
     // Coming Soon
     comingSoonTitle: "Coming Soon",
-    
+    soonBadge: "Soon",
+
     // Common
     viewDetails: "View Details →",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
-    email: "rtat.store@gmail.com",
+    email: "robaya.studio@gmail.com",
     home: "Home",
     
     // Cookie consent
@@ -70,12 +71,13 @@ window.translations = {
     
     // Coming Soon
     comingSoonTitle: "Скоро",
-    
+    soonBadge: "Скоро",
+
     // Common
     viewDetails: "Подробнее →",
     privacy: "Политика конфиденциальности",
     terms: "Условия использования",
-    email: "rtat.store@gmail.com",
+    email: "robaya.studio@gmail.com",
     home: "Главная",
     
     // Cookie consent

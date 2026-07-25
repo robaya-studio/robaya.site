@@ -13,7 +13,7 @@ class ThemeManager {
     this.loadTheme();
     this.setupSystemThemeListener();
     this.applyTheme();
-    console.log('🎨 ThemeManager initialized with automatic theme detection');
+    console.log('🎨 ThemeManager initialized');
   }
 
   // Detect system theme
@@ -33,18 +33,20 @@ class ThemeManager {
       mediaQuery.addEventListener('change', (e) => {
         this.systemTheme = e.matches ? 'dark' : 'light';
         console.log('🔄 System theme changed to:', this.systemTheme);
-        
-        // Always apply the new system theme since we're in automatic mode
-        this.applyTheme();
+
+        // Only follow the OS automatically when the user hasn't picked a theme manually
+        if (this.currentTheme === 'system') {
+          this.applyTheme();
+        }
       });
     }
   }
 
-  // Load theme from localStorage (always system for automatic mode)
+  // Load theme from localStorage: an explicit light/dark override, or system by default
   loadTheme() {
-    // Always use system theme for automatic mode
-    this.currentTheme = 'system';
-    console.log('📖 Loaded theme: system (automatic)');
+    const saved = localStorage.getItem('robayaTheme');
+    this.currentTheme = (saved === 'light' || saved === 'dark') ? saved : 'system';
+    console.log('📖 Loaded theme:', this.currentTheme);
   }
 
   // Save theme to localStorage
@@ -55,21 +57,29 @@ class ThemeManager {
 
   // Apply current theme to document
   applyTheme() {
-    // Always use system theme for automatic mode
-    const effectiveTheme = this.systemTheme;
-    
+    const effectiveTheme = this.getEffectiveTheme();
+
     document.documentElement.setAttribute('data-theme', effectiveTheme);
-    console.log('🎨 Applied theme:', effectiveTheme, '(system detected)');
+    console.log('🎨 Applied theme:', effectiveTheme, `(${this.currentTheme})`);
+
+    document.dispatchEvent(new CustomEvent('robaya:themechange', { detail: { effectiveTheme } }));
   }
 
-  // Get current theme
+  // Manually switch between light/dark, overriding system detection, and persist the choice
+  toggleTheme() {
+    this.currentTheme = this.getEffectiveTheme() === 'dark' ? 'light' : 'dark';
+    this.saveTheme();
+    this.applyTheme();
+  }
+
+  // Get current theme setting ('light' | 'dark' | 'system')
   getCurrentTheme() {
     return this.currentTheme;
   }
 
-  // Get effective theme (actual applied theme)
+  // Get effective theme (actual applied theme, resolving 'system' to light/dark)
   getEffectiveTheme() {
-    return this.systemTheme;
+    return this.currentTheme === 'system' ? this.systemTheme : this.currentTheme;
   }
 
   // Check if theme is supported

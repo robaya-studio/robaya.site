@@ -5,23 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../css/style.css">
   <script src="locales/translations.js"></script>
+  <script src="../../js/site-chrome.js"></script>
   <script src="../../js/lang.js"></script>
   <script src="../../js/theme.js"></script>
   <script src="../../js/cookie-consent.js"></script>
   <script src="../../js/screenshot-gallery.js"></script>
+  <script src="../../js/hls-video.js"></script>
   <title data-i18n="hwatuPageTitle">Hwatu — Korean Card Game</title>
 </head>
 <body>
-  <div class="lang-switch">
-      <a href="#" data-lang="en">🇺🇸 EN</a>
-      <a href="#" data-lang="ru">🇷🇺 RU</a>
-  </div>
-
-  <a href="../../index.html" class="home-button">
-    <span class="home-icon">🏠</span>
-    <span data-i18n="home">Home</span>
-  </a>
-
   <div class="container">
     <header class="game-hero">
       <div class="game-icon-large">
@@ -29,9 +21,15 @@
       </div>
       <h1 data-i18n="hwatuTitle">Hwatu</h1>
       <p class="game-subtitle" data-i18n="hwatuSubtitle">Classic Korean card game</p>
-      <a href="https://apps.apple.com/app/id6563145829" class="download-btn-large" target="_blank" rel="noopener">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="50">
-      </a>
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/app/id6563145829" class="download-btn-large" target="_blank" rel="noopener">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="50">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.at.hwatu" class="download-btn-large" target="_blank" rel="noopener">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="74">
+          <span class="soon-badge" data-i18n="soonBadge">Soon</span>
+        </a>
+      </div>
     </header>
     
     <section class="game-description">
@@ -122,167 +120,18 @@
     <section class="download-section">
       <h2 data-i18n="downloadTitle">Download Now</h2>
       <p data-i18n="downloadDesc">Hwatu is now available! Download and play your favorite game anytime</p>
-      
-      <a href="https://apps.apple.com/app/id6563145829" class="download-btn-large" target="_blank" rel="noopener">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="50">
-      </a>
+
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/app/id6563145829" class="download-btn-large" target="_blank" rel="noopener">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="50">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.at.hwatu" class="download-btn-large" target="_blank" rel="noopener">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="74">
+          <span class="soon-badge" data-i18n="soonBadge">Soon</span>
+        </a>
+      </div>
     </section>
     
-    <footer class="game-footer">
-      <div class="game-links">
-        <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
-        <a href="terms.html" data-i18n="terms">Terms of Use</a>
-        <a href="mailto:rtat.store@gmail.com" data-i18n="email">rtat.store@gmail.com</a>
-      </div>
-    </footer>
   </div>
-
-  <script>
-    // HLS Video Support
-    
-    let currentImageIndex = 0;
-    const imagesArray = Array.from(screenshotItems);
-
-    // Set total count
-    lightboxTotal.textContent = imagesArray.length;
-
-    screenshotItems.forEach((img, index) => {
-      img.addEventListener('click', (e) => {
-        currentImageIndex = index;
-        updateLightbox();
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function updateLightbox() {
-      lightboxImg.src = imagesArray[currentImageIndex].src;
-      lightboxCurrent.textContent = currentImageIndex + 1;
-    }
-
-    function showNextImage() {
-      currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
-      updateLightbox();
-    }
-
-    function showPrevImage() {
-      currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
-      updateLightbox();
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showPrevImage();
-    });
-    lightboxNext.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showNextImage();
-    });
-    
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-      
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        showPrevImage();
-      } else if (e.key === 'ArrowRight') {
-        showNextImage();
-      }
-    });
-
-    // Screenshot Carousel
-    const carousel = document.querySelector('.screenshots-carousel');
-    const carouselPrev = document.getElementById('carouselPrev');
-    const carouselNext = document.getElementById('carouselNext');
-    
-    if (carousel && carouselPrev && carouselNext) {
-      let currentIndex = 0;
-      const scrollAmount = 300;
-      
-      function updateCarouselButtons() {
-        carouselPrev.disabled = false;
-        carouselNext.disabled = false;
-      }
-      
-      function scrollCarousel(direction) {
-        const itemWidth = carousel.querySelector('.screenshot-item').offsetWidth + 16; // width + gap
-        currentIndex += direction;
-        
-        // Smooth scroll to position
-        carousel.scrollTo({
-          left: currentIndex * itemWidth,
-          behavior: 'smooth'
-        });
-        
-        updateCarouselButtons();
-      }
-      
-      carouselPrev.addEventListener('click', () => scrollCarousel(-1));
-      carouselNext.addEventListener('click', () => scrollCarousel(1));
-      
-      // Scroll with touch/mouse drag
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-      
-      carousel.addEventListener('mousedown', (e) => {
-        isDown = true;
-        startX = e.pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-      });
-      
-      carousel.addEventListener('mouseleave', () => {
-        isDown = false;
-      });
-      
-      carousel.addEventListener('mouseup', () => {
-        isDown = false;
-      });
-      
-      carousel.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 2;
-        carousel.scrollLeft = scrollLeft - walk;
-      });
-    }
-
-    // HLS Video Support
-    if (document.getElementById('hwatuVideo')) {
-      const video = document.getElementById('hwatuVideo');
-      if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // Native HLS support (Safari)
-        console.log('✅ Native HLS support detected');
-      } else {
-        // Load hls.js for other browsers
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
-        script.onload = function() {
-          if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(video.querySelector('source').src);
-            hls.attachMedia(video);
-            console.log('✅ HLS.js loaded and attached');
-          }
-        };
-        document.head.appendChild(script);
-      }
-    }
-  </script>
 </body>
 </html>
