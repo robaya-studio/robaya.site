@@ -126,7 +126,7 @@ const termsSpec = [
   'h2:termsAccount', 'p:termsAccountText',
   'h2:termsAdvertising', 'p:termsAdvertisingText',
   '<p><a href="privacy.html" data-i18n="privacy">Privacy Policy</a></p>',
-  'h2:termsOnlinePlay', 'p:termsOnlinePlayText', 'p:termsOnlineAccessText', 'p:termsTournamentsText',
+  'h2:termsOnlinePlay', 'p:termsOnlinePlayText', 'p:termsOnlineAccessText',
   'h2:termsPrivacy', 'p:termsPrivacyText',
   '<p><a href="privacy.html" data-i18n="privacy">Privacy Policy</a></p>',
   'h2:termsDisclaimer', 'p:termsDisclaimerText',
