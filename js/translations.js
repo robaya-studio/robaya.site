@@ -26,7 +26,7 @@ window.translations = {
     updatedBadge: "Big update",
 
     hwatuTitle: "Hwatu",
-    hwatuDescription: "The Korean game of flower cards. Play offline against bots, in online rooms with players from around the world, and privately with friends.",
+    hwatuDescription: "The Korean game of flower cards: play bots offline, players from around the world online, or friends at your own table.",
     hwatuTag1: "Card game",
     hwatuTag2: "Online & offline",
     hwatuTag3: "iOS · Android",
@@ -99,7 +99,7 @@ window.translations = {
     updatedBadge: "Большое обновление",
 
     hwatuTitle: "Хато",
-    hwatuDescription: "Корейская игра цветочных карт. Играйте офлайн против компьютера, онлайн с игроками со всего мира и с друзьями за закрытым столом.",
+    hwatuDescription: "Корейская игра цветочных карт: против компьютера без интернета, с игроками со всего мира или с друзьями за своим столом.",
     hwatuTag1: "Карточная игра",
     hwatuTag2: "Онлайн и офлайн",
     hwatuTag3: "iOS · Android",
