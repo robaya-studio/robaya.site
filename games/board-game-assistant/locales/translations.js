@@ -1,6 +1,7 @@
 // Board Games Assistant Localization
 window['board-game-assistantTranslations'] = {
   en: {
+    appName: "Board Games Assistant",
     // Game page
     boardGamesAssistantPageTitle: "Board Games Assistant",
     boardGamesAssistantTitle: "Board Games Assistant",
@@ -126,6 +127,7 @@ window['board-game-assistantTranslations'] = {
   },
   
   ru: {
+    appName: "Ассистент настольных игр",
     // Game page
     boardGamesAssistantPageTitle: "Ассистент настольных игр | Robaya",
     boardGamesAssistantTitle: "Ассистент настольных игр",

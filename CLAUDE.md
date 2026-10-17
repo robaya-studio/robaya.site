@@ -4,52 +4,68 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static marketing site (GitHub Pages, custom domain `robaya.studio` via `CNAME`) listing mobile games/apps built by Robaya Studio, with a landing page per app plus shared Privacy Policy / Terms of Use pages. Pure HTML/CSS/vanilla JS — no build step, no package.json, no framework.
+A static marketing site (GitHub Pages behind Cloudflare, custom domain `robaya.studio` via `CNAME`)
+for the mobile games/apps of Robaya Studio: a home page, one landing page per app, per-app
+Privacy Policy / Terms pages, and the site's own privacy/terms. Pure HTML/CSS/vanilla JS — no
+build step, no package.json, no framework. `README.md` (Russian) is the how-to; this file is
+the architecture.
 
 ## Running locally
-
-No build/lint/test tooling exists. Serve the directory with any static file server and open it in a browser:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`. `test.html` at the repo root is a manual scratch page for exercising the localization system in isolation.
-
 ## Architecture
 
-### Page types
-- `index.html` — home page, grid of game cards linking to `games/<name>/`.
-- `privacy.html`, `terms.html` — site-wide legal pages.
-- `games/<name>/index.html` — one landing page per app (Hwatu, Sudoku, Board Games Assistant).
-- `games/<name>/privacy.html`, `games/<name>/terms.html` — per-app legal pages (not every app has both; check before assuming one exists).
+### Pages
+- `index.html` — home: hero, app cards (`.app-card`, Hwatu is `--featured`), contact.
+- `privacy.html`, `terms.html` — the website's own documents, linking to each app's.
+- `games/<app>/index.html` — app landing page; `games/<app>/privacy.html`, `terms.html` — the
+  app's agreements. The in-app agreement links point at these URLs (the Hwatu game reads them
+  from Remote Config / `AgreementsSettings.asset`), so they must not move.
 
-Every game lives entirely under `games/<name>/` with its own `AppIcon.png`, `screenshots/`, and `locales/translations.js`. There is no shared game template file to copy — new games are created by hand-writing HTML that follows the pattern of an existing game folder (see `README.md`, which has a full step-by-step example).
+### Shared chrome (`js/site-chrome.js`)
+Injects the sticky header (brand + breadcrumb to the app, nav to the current app's or the
+site's privacy/terms, theme toggle, EN/RU switch) and the footer, and turns every
+`<span data-icon="name">` into an inline SVG from its `ICONS` table. Page context comes from
+the URL (`/games/`, `privacy.html`, `terms.html`) and `<body data-app-name>`. Must load before
+`lang.js` so the injected `data-i18n` elements get translated.
 
-### Localization (`js/lang.js` + translations files)
-Single-page-per-language-pair model: HTML contains both the markup and `data-i18n="key"` attributes with English fallback text; JS swaps `textContent`/`alt`/`placeholder`/`title` at runtime. No page reload, no server-side rendering.
+### Localization (`js/lang.js`)
+Markup carries English fallback text plus `data-i18n` / `data-i18n-src` / `data-i18n-content` /
+`data-i18n-aria`. Lookup: the app's table (`window['<folder>Translations']`) → the global
+`window.translations` (`js/translations.js`, loaded on every page, app pages included). Languages
+are `['en', 'ru']`; choice in `localStorage` (`robayaLanguage`), else `navigator.language`.
+`data-i18n-src` values are written from the site root and resolved for `/games/` pages.
+A new string = key in both `en` and `ru` + the attribute in markup.
 
-- `window.langManager` (`js/lang.js`) is the one instance driving all translation. On `DOMContentLoaded` it detects whether the current path contains `/games/` — if so it waits for a **game-specific** global (`window.<gameName>Translations`, e.g. `window.hwatuTranslations`) set by `games/<name>/locales/translations.js`; otherwise it waits for `window.translations` set by the root `js/translations.js`.
-- `getTranslation(key)` checks `gameTranslations` first, then falls back to the global `translations` object — so a game page can override a global key like `home` or `email` if needed.
-- Language choice persists in `localStorage` (`robayaLanguage`) and falls back to `navigator.language`. Supported languages are hardcoded as `['en', 'ru']` in `LanguageManager.supportedLanguages` — adding a language means updating that array *and* adding the translation keys everywhere, not just adding translations.
-- `.lang-switch a[data-lang]` elements anywhere on the page are auto-wired as language switch buttons.
+### Theme (`js/theme.js`, `css/style.css`)
+Colours are tokens on `:root`, overridden for dark under `@media (prefers-color-scheme: dark)`
+(guarded by `:root:not([data-theme="light"])`) and under `:root[data-theme="dark"]`.
+`theme.js` follows the OS until the header toggle stores an explicit choice (`robayaTheme`).
+Per-app accent: `<body data-accent="sudoku|board-games">` (Hwatu uses the default red).
 
-When adding any new translatable string: add the key to both `en` and `ru` blocks in the relevant translations file (global `js/translations.js` for site-wide content, `games/<name>/locales/translations.js` for game-specific content), and add `data-i18n="key"` to the element with the English text as static fallback content.
+### No cookies
+The site sets no cookies and has no analytics; it only keeps language/theme in localStorage.
+There was a cookie banner — removed because nothing was gated on it. Store badges and hls.js are
+self-hosted (`img/badges/`, `js/vendor/`); the only third-party request is the Apple-hosted
+trailer on the Hwatu page. Adding analytics, embeds or fonts from a CDN changes what the
+privacy pages (site's and Hwatu's section 17) say — update them in the same change.
 
-### Theming (`js/theme.js`)
-`window.themeManager` sets `data-theme="light|dark"` on `<html>` purely from `prefers-color-scheme`, live-updating on OS theme change. There is currently no manual light/dark toggle in the UI — theme is fully automatic. `css/style.css` keys dark-mode overrides off `[data-theme="dark"]`.
+### Hwatu agreements
+Texts live in `games/hwatu/locales/translations.js`; `node tools/build-hwatu-legal.js`
+regenerates `privacy.html` / `terms.html` from it (English fallback + structure). The version
+in `privacyLastUpdated` / `termsLastUpdated` must match the game's (Unity repo:
+`Assets/ScriptableObjects/AgreementsSettings.asset` and Remote Config `agreements`): raising it
+there makes every player accept the documents again.
 
-### Cookie consent (`js/cookie-consent.js`)
-`window.cookieConsentManager` injects a banner into `document.body` on first visit (checked via a `robayaCookieConsent` cookie, not localStorage) and links "Learn More" to the correct relative `privacy.html` depending on whether the current page is under `/games/`. Uses the same `data-i18n` mechanism and retries translation application on a timer since it can render before `langManager`/translations finish loading.
+### Screenshots (`js/screenshot-gallery.js`)
+`data-gallery="<path>"` + `data-pattern` (default `0x0ss`) + `data-count`; files are
+`<pattern>-1.png … <pattern>-N.png`. `.screenshots-grid--landscape` for landscape shots.
 
-### Screenshot galleries (`js/screenshot-gallery.js`)
-Opt-in via `data-gallery="<path>"` on a container plus optional `data-pattern` (filename prefix, default `0x0ss`) and `data-count` (default 9). It builds a horizontally-scrolling carousel with arrow nav and a shared full-screen lightbox (created once per page, reused across all galleries on that page). Screenshot files must already exist under the given path following the `<pattern>.png`, `<pattern>-2.png`, `<pattern>-3.png`, ... naming convention (see any `games/<name>/screenshots/` folder).
+## Conventions
 
-### Script load order matters
-Game pages load, in this order: game-specific `locales/translations.js` → `../../js/lang.js` → `../../js/theme.js` → `../../js/cookie-consent.js` (and `../../js/screenshot-gallery.js` if the page has galleries). `lang.js` polls with `setTimeout` for the translations globals rather than relying on load order, but keep the convention when adding new pages regardless.
-
-## Conventions to follow when extending the site
-
-- New game folders replicate the existing structure exactly: `index.html`, `locales/translations.js` (exporting `window.<gameName>Translations`), `AppIcon.png`, `screenshots/`. Add a card to the home page grid in `index.html` and a translation key set for the new game's title/description/features in `js/translations.js`.
-- Keep relative paths correct: game pages reference shared assets as `../../css/style.css`, `../../js/*.js`; legal pages inside a game folder are one level up: `../../privacy.html`.
-- `rtat.store@gmail.com` is the contact email used in page footers site-wide — reuse the existing `mailto:` markup/`data-i18n="email"` pattern rather than hardcoding a new one.
+- Relative paths: app pages reach shared assets as `../../css/…`, `../../js/…`, `../../img/…`.
+- Contact email everywhere: `robaya.studio@gmail.com`.
+- Keep one component vocabulary (see the header comment of `css/style.css`); no inline styles.

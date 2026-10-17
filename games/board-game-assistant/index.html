@@ -1,101 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="boardGamesAssistantPageTitle">Board Games Assistant</title>
+  <meta name="description" content="Board Games Assistant — your companion for tabletop gaming: teams, score tracking, timer, calculator, randomizer, coin flip and dice.">
+  <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0e0c" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6749201921">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Robaya">
+  <meta property="og:title" content="Board Games Assistant">
+  <meta property="og:url" content="https://robaya.studio/games/board-game-assistant/">
+  <meta property="og:image" content="https://robaya.studio/games/board-game-assistant/AppIcon.png">
+  <link rel="canonical" href="https://robaya.studio/games/board-game-assistant/">
+  <link rel="icon" href="AppIcon.png" type="image/png">
   <link rel="stylesheet" href="../../css/style.css">
+  <script src="../../js/translations.js"></script>
   <script src="locales/translations.js"></script>
+  <script src="../../js/theme.js"></script>
   <script src="../../js/site-chrome.js"></script>
   <script src="../../js/lang.js"></script>
-  <script src="../../js/theme.js"></script>
-  <script src="../../js/cookie-consent.js"></script>
   <script src="../../js/screenshot-gallery.js"></script>
-  <title data-i18n="boardGamesAssistantPageTitle">Board Games Assistant</title>
 </head>
-<body>
-  <div class="container">
-    <header class="game-hero">
-      <div class="game-icon-large">
-        <img src="AppIcon.png" alt="Board Games Assistant App Icon">
-      </div>
-      <h1 data-i18n="boardGamesAssistantTitle">Board Games Assistant</h1>
-      <p class="game-subtitle" data-i18n="boardGamesAssistantSubtitle">Your digital companion for tabletop gaming</p>
-      <a href="https://apps.apple.com/app/id6749201921" class="download-btn-large" target="_blank" rel="noopener">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="50">
-      </a>
-    </header>
-    
-
-    <section class="app-info">
-      <p data-i18n="appDescription">The ultimate digital assistant for board game enthusiasts is now available! Create teams, track scores, manage timers, and enhance your tabletop gaming sessions with our comprehensive toolkit.</p>
-    </section>
-
-    <section class="game-description">
-      <h2 data-i18n="boardGamesAssistantDescriptionTitle">About Board Games Assistant</h2>
-      <p data-i18n="boardGamesAssistantDescription">Transform your board game experience with our digital assistant. Create teams, track scores, manage timers, use calculators and randomizers, and enhance your tabletop gaming sessions. The main feature is the game mode where you can create teams, keep score, and access all app features with saved game history.</p>
-    </section>
-
-    <section class="game-features">
-      <h2 data-i18n="boardGamesAssistantFeaturesTitle">Available Features</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">🎮</div>
-          <h3 data-i18n="boardGamesAssistantFeature6Title">Game Mode</h3>
-          <p data-i18n="boardGamesAssistantFeature6Desc">Complete game mode with team creation, score tracking, and game history</p>
+<body data-app-name="Board Games Assistant" data-accent="board-games">
+  <main>
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <h1 class="hero__title reveal" data-i18n="boardGamesAssistantTitle">Board Games Assistant</h1>
+          <p class="hero__lead reveal reveal--2" data-i18n="boardGamesAssistantSubtitle">Your digital companion for tabletop gaming</p>
+          <div class="hero__actions store-badges reveal reveal--3">
+            <a class="store-badge" href="https://apps.apple.com/app/id6749201921" target="_blank" rel="noopener">
+              <img src="../../img/badges/app-store.svg" alt="Download on the App Store" data-i18n="badgeAppStore" height="50">
+            </a>
+          </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">👥</div>
-          <h3 data-i18n="boardGamesAssistantFeature1Title">Team Creation</h3>
-          <p data-i18n="boardGamesAssistantFeature1Desc">Create and manage teams for your board game sessions</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">📊</div>
-          <h3 data-i18n="boardGamesAssistantFeature2Title">Score Tracker</h3>
-          <p data-i18n="boardGamesAssistantFeature2Desc">Digital scoreboards for multiple players and teams</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">⏱️</div>
-          <h3 data-i18n="boardGamesAssistantFeature3Title">Timer</h3>
-          <p data-i18n="boardGamesAssistantFeature3Desc">Customizable timers for different game phases</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🧮</div>
-          <h3 data-i18n="boardGamesAssistantFeature4Title">Calculator</h3>
-          <p data-i18n="boardGamesAssistantFeature4Desc">Built-in calculator for game calculations</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎰</div>
-          <h3 data-i18n="boardGamesAssistantFeature5Title">Randomizer</h3>
-          <p data-i18n="boardGamesAssistantFeature5Desc">Random selection of players and teams</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🪙</div>
-          <h3 data-i18n="boardGamesAssistantFeature7Title">Coin Flip</h3>
-          <p data-i18n="boardGamesAssistantFeature7Desc">Virtual coin toss for decision making</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🎲</div>
-          <h3 data-i18n="boardGamesAssistantFeature8Title">Dice Roll</h3>
-          <p data-i18n="boardGamesAssistantFeature8Desc">Roll virtual dice for your games</p>
+        <div class="hero__art reveal reveal--2">
+          <img src="AppIcon.png" alt="Board Games Assistant" width="256" height="256">
         </div>
       </div>
     </section>
 
-    <!-- Screenshots Section -->
-    <section class="game-screenshots">
-      <h2 data-i18n="boardGamesAssistantScreenshotsTitle">App Screenshots</h2>
-      <div class="screenshots-grid" data-gallery="screenshots/" data-pattern="0x0ss" data-count="10"></div>
+    <section class="section section--alt">
+      <div class="wrap split">
+        <div>
+          <h2 class="section__title" data-i18n="boardGamesAssistantDescriptionTitle">About Board Games Assistant</h2>
+        </div>
+        <div>
+          <p class="section__lead" data-i18n="boardGamesAssistantDescription">Transform your board game experience with our digital assistant. Create teams, track scores, manage timers, use calculators and randomizers, and enhance your tabletop gaming sessions. The main feature is the game mode where you can create teams, keep score, and access all app features with saved game history.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="download-section">
-      <h2 data-i18n="downloadTitle">Download Now</h2>
-      <p data-i18n="downloadDesc">Board Games Assistant is now available! Download and start enhancing your tabletop gaming experience.</p>
-      
-      <a href="https://apps.apple.com/app/id6749201921" class="download-btn-large" target="_blank" rel="noopener">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="50">
-      </a>
+    <section class="section">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" data-i18n="boardGamesAssistantFeaturesTitle">Available Features</h2>
+        </header>
+        <div class="grid grid--4">
+          <article class="card feature">
+            <span class="feature__icon" data-icon="cards"></span>
+            <h3 data-i18n="boardGamesAssistantFeature6Title">Game Mode</h3>
+            <p data-i18n="boardGamesAssistantFeature6Desc">Complete game mode with team creation, score tracking, and game history</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="users"></span>
+            <h3 data-i18n="boardGamesAssistantFeature1Title">Team Creation</h3>
+            <p data-i18n="boardGamesAssistantFeature1Desc">Create and manage teams for your board game sessions</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="chart"></span>
+            <h3 data-i18n="boardGamesAssistantFeature2Title">Score Tracker</h3>
+            <p data-i18n="boardGamesAssistantFeature2Desc">Digital scoreboards for multiple players and teams</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="timer"></span>
+            <h3 data-i18n="boardGamesAssistantFeature3Title">Timer</h3>
+            <p data-i18n="boardGamesAssistantFeature3Desc">Customizable timers for different game phases</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="calculator"></span>
+            <h3 data-i18n="boardGamesAssistantFeature4Title">Calculator</h3>
+            <p data-i18n="boardGamesAssistantFeature4Desc">Built-in calculator for game calculations</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="shuffle"></span>
+            <h3 data-i18n="boardGamesAssistantFeature5Title">Randomizer</h3>
+            <p data-i18n="boardGamesAssistantFeature5Desc">Random selection of players and teams</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="target"></span>
+            <h3 data-i18n="boardGamesAssistantFeature7Title">Coin Flip</h3>
+            <p data-i18n="boardGamesAssistantFeature7Desc">Virtual coin toss for decision making</p>
+          </article>
+          <article class="card feature">
+            <span class="feature__icon" data-icon="dice"></span>
+            <h3 data-i18n="boardGamesAssistantFeature8Title">Dice Roll</h3>
+            <p data-i18n="boardGamesAssistantFeature8Desc">Roll virtual dice for your games</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-  </div>
+    <section class="section section--alt">
+      <div class="wrap">
+        <header class="section__head">
+          <h2 class="section__title" data-i18n="boardGamesAssistantScreenshotsTitle">App Screenshots</h2>
+        </header>
+        <div class="screenshots-grid" data-gallery="screenshots/" data-pattern="0x0ss" data-count="10"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap cta">
+        <img class="cta__icon" src="AppIcon.png" alt="" width="96" height="96">
+        <h2 class="section__title" data-i18n="downloadTitle">Download Now</h2>
+        <p class="section__lead" data-i18n="downloadDesc">Board Games Assistant is now available! Download and start enhancing your tabletop gaming experience.</p>
+        <div class="store-badges">
+          <a class="store-badge" href="https://apps.apple.com/app/id6749201921" target="_blank" rel="noopener">
+            <img src="../../img/badges/app-store.svg" alt="Download on the App Store" data-i18n="badgeAppStore" height="50">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
