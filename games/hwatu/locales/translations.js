@@ -8,7 +8,7 @@ window.hwatuTranslations = {
     hwatuMetaDescription: "Hwatu, the Korean game of flower cards: play bots offline, players from around the world online, or friends at your own table.",
     hwatuTitle: "Hwatu",
     hwatuEyebrow: "Korean card game · iOS & Android",
-    hwatuSubtitle: "The card game that gathers people around the holiday table — now always with you. Take on bots offline, sit down with players from around the world, or call friends to your own table.",
+    hwatuSubtitle: "The card game people gather for and play till dawn — now always with you. Take on bots offline, sit down with players from around the world, or call friends to your own table.",
     hwatuChipPlayers: "2–5 players",
     hwatuChipModes: "Offline & online",
     hwatuChipPortrait: "Portrait & landscape",
@@ -16,7 +16,7 @@ window.hwatuTranslations = {
 
     hwatuAboutEyebrow: "About the game",
     hwatuAboutTitle: "A battle of flowers: twelve months in one deck",
-    hwatuAboutText: "Hwatu means “battle of flowers”. The deck holds 48 cards — twelve months, four cards each, and every month has its own flower: pine, plum blossom, cherry blossom and on through the year. Match the months, build combinations, keep an eye on your rivals — and take the winnings.",
+    hwatuAboutText: "Hwatu means “battle of flowers”. The deck holds 48 cards — twelve months, four cards each, and every month has its own flower: keklik, myadya, sagura and on through the year. Match the months, build combinations, keep an eye on your rivals — and take the winnings.",
     hwatuRule1: "Yagi, yonko and kanceri — just like at a real table",
     hwatuRule2: "Pregnant tens and twenties: if nobody takes them, they're worth double next game, then triple — and the tension builds",
     hwatuRule3: "Play by your house rules: hadai doesn't pay, postman doesn't pay, pohato on three yagi and more — switch them on in the settings",
@@ -28,7 +28,7 @@ window.hwatuTranslations = {
     hwatuMode1Title: "Against the computer",
     hwatuMode1Desc: "On the subway, on a plane, out of signal — bot opponents are always ready for a game, no internet needed.",
     hwatuMode2Title: "Players worldwide",
-    hwatuMode2Desc: "Open tables with rivals from all over the world. Pick a stake, take a seat — the game starts as soon as the table fills up.",
+    hwatuMode2Desc: "Open tables with rivals from all over the world. Pick a stake and take a seat.",
     hwatuMode3Title: "Your own table",
     hwatuMode3Desc: "Gather your crowd: send a link or show a QR code, and your friends are at the table — even from another city.",
 
@@ -206,7 +206,7 @@ window.hwatuTranslations = {
     hwatuMetaDescription: "Хато — корейская игра цветочных карт: против компьютера без интернета, с игроками со всего мира или с друзьями за своим столом.",
     hwatuTitle: "Хато",
     hwatuEyebrow: "Корейская карточная игра · iOS и Android",
-    hwatuSubtitle: "Карточная игра, ради которой собираются за праздничным столом, — теперь всегда с собой. Сразитесь с компьютером без интернета, сядьте за стол с игроками со всего мира или позовите друзей за свой.",
+    hwatuSubtitle: "Карточная игра, ради которой собираются и играют до утра, — теперь всегда с собой. Сразитесь с компьютером без интернета, сядьте за стол с игроками со всего мира или позовите друзей за свой.",
     hwatuChipPlayers: "2–5 игроков",
     hwatuChipModes: "Офлайн и онлайн",
     hwatuChipPortrait: "Вертикально и горизонтально",
@@ -214,7 +214,7 @@ window.hwatuTranslations = {
 
     hwatuAboutEyebrow: "Об игре",
     hwatuAboutTitle: "Битва цветов: двенадцать месяцев в одной колоде",
-    hwatuAboutText: "Хато — это «битва цветов». В колоде 48 карт: двенадцать месяцев по четыре карты, и у каждого месяца свой цветок — сосна, слива, сакура и дальше по кругу года. Подбирайте карты по месяцам, собирайте комбинации, следите за соперниками — и забирайте выигрыш.",
+    hwatuAboutText: "Хато — это «битва цветов». В колоде 48 карт: двенадцать месяцев по четыре карты, и у каждого месяца свой цветок — кеклик, мядя, сагура и дальше по кругу года. Подбирайте карты по месяцам, собирайте комбинации, следите за соперниками — и забирайте выигрыш.",
     hwatuRule1: "Яги, йонко и кансери — всё как за живым столом",
     hwatuRule2: "Беременные десятки и двадцатки: не собрал никто — в следующей партии они стоят вдвое, потом втрое, и накал растёт",
     hwatuRule3: "Играйте по своим правилам: «хадай не платит», «почтальон не платит», «похато при трёх яги» и другие включаются в настройках",
@@ -226,7 +226,7 @@ window.hwatuTranslations = {
     hwatuMode1Title: "Против компьютера",
     hwatuMode1Desc: "В метро, в самолёте, на даче — соперники-боты всегда готовы к партии, даже без интернета.",
     hwatuMode2Title: "Игроки со всего мира",
-    hwatuMode2Desc: "Открытые столы с соперниками со всего света. Выберите ставку и садитесь — партия начнётся, как только соберутся игроки.",
+    hwatuMode2Desc: "Открытые столы с соперниками со всего света. Выберите ставку и садитесь за стол.",
     hwatuMode3Title: "Свой стол",
     hwatuMode3Desc: "Соберите своих: отправьте ссылку или покажите QR-код — и друзья за столом, даже если вы в разных городах.",
 
