@@ -26,17 +26,13 @@ window.hwatuTranslations = {
     hwatuModesTitle: "Play the way you like",
     hwatuModesSubtitle: "One game, three ways to sit down at the table.",
     hwatuMode1Title: "Offline against bots",
-    hwatuMode1Desc: "Play against computer opponents whenever you like, even without an internet connection. Local games have no limits.",
-    hwatuMode1Tag: "Always free",
+    hwatuMode1Desc: "Play against computer opponents whenever you like, even without an internet connection.",
     hwatuMode2Title: "Public rooms",
     hwatuMode2Desc: "Join a table with players from around the world and pick a stake that suits you.",
-    hwatuMode2Tag: "Free time every day · unlimited with Premium",
     hwatuMode3Title: "Private table",
     hwatuMode3Desc: "Create a table, send friends a link or show them a QR code, and play together wherever they are.",
-    hwatuMode3Tag: "Premium",
     hwatuMode4Title: "Tournaments",
     hwatuMode4Desc: "Sign up, earn points in online games, climb the leaderboard and win prizes.",
-    hwatuMode4Tag: "Prizes: coins, gems, Premium days",
 
     hwatuFeaturesEyebrow: "Every day",
     hwatuFeaturesTitle: "More than a deck of cards",
@@ -58,17 +54,6 @@ window.hwatuTranslations = {
     hwatuFeature8Title: "Cloud save",
     hwatuFeature8Desc: "Sign in with Apple or Google and continue on any device.",
 
-    hwatuPremiumEyebrow: "Premium",
-    hwatuPremiumTitle: "Everything, without limits",
-    hwatuPremiumSubtitle: "A subscription for those who play every day.",
-    hwatuPremium1: "No interstitial ads",
-    hwatuPremium2: "Public rooms without time limits, at any stake",
-    hwatuPremium3: "Private tables with friends",
-    hwatuPremium4: "Full match history",
-    hwatuPremium5: "Detailed statistics",
-    hwatuPremium6: "Colour styles",
-    hwatuPremium7: "Streak freezes every month",
-    hwatuPremiumNote: "The current price and list of features are shown in the game before purchase. The subscription renews automatically and can be cancelled at any time in your App Store or Google Play settings.",
 
     hwatuVideoEyebrow: "Video",
     hwatuVideoTitle: "See it in action",
@@ -77,7 +62,7 @@ window.hwatuTranslations = {
     hwatuScreenshotsTitle: "A closer look",
 
     downloadTitle: "Download Hwatu",
-    downloadDesc: "Free to play on the App Store and Google Play, with optional in-app purchases.",
+    downloadDesc: "Available on the App Store and Google Play.",
 
     // Privacy Policy
     hwatuPrivacyTitle: "Privacy Policy - Hwatu",
@@ -242,17 +227,13 @@ window.hwatuTranslations = {
     hwatuModesTitle: "Играйте как удобно",
     hwatuModesSubtitle: "Одна игра — три способа сесть за стол.",
     hwatuMode1Title: "Офлайн против компьютера",
-    hwatuMode1Desc: "Играйте с компьютерными соперниками когда угодно, даже без интернета. Локальная игра без ограничений.",
-    hwatuMode1Tag: "Всегда бесплатно",
+    hwatuMode1Desc: "Играйте с компьютерными соперниками когда угодно, даже без интернета.",
     hwatuMode2Title: "Публичные комнаты",
     hwatuMode2Desc: "Садитесь за стол с игроками со всего мира и выбирайте ставку себе по карману.",
-    hwatuMode2Tag: "Бесплатное время каждый день · без ограничений с Премиумом",
     hwatuMode3Title: "Закрытый стол",
     hwatuMode3Desc: "Создайте стол, отправьте друзьям ссылку или покажите QR-код и играйте вместе, где бы они ни были.",
-    hwatuMode3Tag: "Премиум",
     hwatuMode4Title: "Турниры",
     hwatuMode4Desc: "Записывайтесь, набирайте очки в сетевых играх, поднимайтесь в таблице и выигрывайте призы.",
-    hwatuMode4Tag: "Призы: монеты, гемы, дни Премиума",
 
     hwatuFeaturesEyebrow: "Каждый день",
     hwatuFeaturesTitle: "Больше, чем колода карт",
@@ -274,17 +255,6 @@ window.hwatuTranslations = {
     hwatuFeature8Title: "Облачное сохранение",
     hwatuFeature8Desc: "Войдите через Apple или Google и продолжайте на любом устройстве.",
 
-    hwatuPremiumEyebrow: "Премиум",
-    hwatuPremiumTitle: "Всё и без ограничений",
-    hwatuPremiumSubtitle: "Подписка для тех, кто играет каждый день.",
-    hwatuPremium1: "Без межстраничной рекламы",
-    hwatuPremium2: "Публичные комнаты без ограничения времени и с любой ставкой",
-    hwatuPremium3: "Закрытые столы с друзьями",
-    hwatuPremium4: "Полная история матчей",
-    hwatuPremium5: "Детальная статистика",
-    hwatuPremium6: "Цветовые схемы",
-    hwatuPremium7: "Заморозки серии каждый месяц",
-    hwatuPremiumNote: "Актуальная цена и список возможностей показываются в игре перед покупкой. Подписка продлевается автоматически, отменить её можно в любой момент в настройках App Store или Google Play.",
 
     hwatuVideoEyebrow: "Видео",
     hwatuVideoTitle: "Посмотрите, как это выглядит",
@@ -293,7 +263,7 @@ window.hwatuTranslations = {
     hwatuScreenshotsTitle: "Поближе",
 
     downloadTitle: "Скачайте Хато",
-    downloadDesc: "Бесплатно в App Store и Google Play, со встроенными покупками.",
+    downloadDesc: "Доступна в App Store и Google Play.",
 
     // Privacy Policy
     hwatuPrivacyTitle: "Политика конфиденциальности - Хато",
