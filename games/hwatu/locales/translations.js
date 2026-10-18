@@ -118,9 +118,9 @@ window.hwatuTranslations = {
     privacyExerciseCCPARights: "To exercise these rights, please contact me at robaya.studio@gmail.com.",
     privacyDataSharing: "7. Data Sharing",
     privacyDataSharingText: "I do not sell your personal information to third parties. Data is shared only with the service providers that make the Game work, and where required by law:",
-    privacyShareFirebase: "Google Firebase (Authentication, Firestore, Realtime Database, Cloud Messaging, Analytics, Crashlytics, Remote Config, Cloud Functions, Hosting): accounts, cloud save, online play, notifications, invitation links, usage statistics, crash reports, and verification of purchases.",
+    privacyShareFirebase: "Google Firebase: accounts, cloud save, online play, notifications, invitation links, usage statistics, crash reports, and verification of purchases.",
     privacyShareSignIn: "Sign in with Apple, Google Sign-In, and Google Play Games: signing in to your account and leaderboards.",
-    privacyShareAdNetworks: "AppLovin MAX and the advertising networks it mediates: serving ads in the Game.",
+    privacyShareAdNetworks: "AppLovin and the advertising networks it works with: serving ads in the Game.",
     privacyShareCmp: "Google User Messaging Platform: showing the consent form and storing your advertising choice.",
     privacyShareStores: "Apple App Store and Google Play: processing purchases and subscriptions.",
     privacyLegalRequirements: "Legal Requirements: I may disclose your information if required by law.",
@@ -146,7 +146,7 @@ window.hwatuTranslations = {
     privacyGoverningLaw: "16. Governing Law",
     privacyGoverningLawText: "This Privacy Policy is governed by and construed in accordance with the laws of European Union, in compliance with the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA/CPRA).",
     privacyWebsite: "17. This Website",
-    privacyWebsiteText: "This website remembers the language and the colour theme you choose, in your browser's local storage. It uses no cookies, no analytics and no advertising. The website is served by GitHub Pages through Cloudflare, and the video on the game page is streamed from Apple's servers; these providers receive your IP address as part of delivering the content.",
+    privacyWebsiteText: "This website remembers the language and the colour theme you choose, in your browser's local storage. It uses no cookies, no analytics and no advertising. Like any website, it is delivered by a hosting provider, and the video on the game page is streamed from Apple's servers; they receive your IP address in order to deliver the content.",
 
     // Terms of Use / EULA
     hwatuTermsTitle: "End-User License Agreement (EULA) - Hwatu",
@@ -316,9 +316,9 @@ window.hwatuTranslations = {
     privacyExerciseCCPARights: "Чтобы воспользоваться этими правами, пожалуйста, свяжитесь со мной по адресу robaya.studio@gmail.com.",
     privacyDataSharing: "7. Передача данных",
     privacyDataSharingText: "Я не продаю ваши персональные данные третьим лицам. Данные передаются только поставщикам услуг, обеспечивающим работу Игры, а также в случаях, предусмотренных законом:",
-    privacyShareFirebase: "Google Firebase (Authentication, Firestore, Realtime Database, Cloud Messaging, Analytics, Crashlytics, Remote Config, Cloud Functions, Hosting): аккаунты, облачное сохранение, сетевая игра, уведомления, ссылки-приглашения, статистика использования, отчёты о сбоях и проверка покупок.",
+    privacyShareFirebase: "Google Firebase: аккаунты, облачное сохранение, сетевая игра, уведомления, ссылки-приглашения, статистика использования, отчёты о сбоях и проверка покупок.",
     privacyShareSignIn: "Вход через Apple, Google Sign-In и Google Play Games: вход в аккаунт и таблицы лидеров.",
-    privacyShareAdNetworks: "AppLovin MAX и рекламные сети, которые он посредничает: показ рекламы в Игре.",
+    privacyShareAdNetworks: "AppLovin и рекламные сети, с которыми он работает: показ рекламы в Игре.",
     privacyShareCmp: "Google User Messaging Platform: показ формы согласия и хранение вашего выбора относительно рекламы.",
     privacyShareStores: "Apple App Store и Google Play: обработка покупок и подписок.",
     privacyLegalRequirements: "Юридические обязательства: я могу раскрывать ваши данные, если это требуется по закону.",
@@ -344,7 +344,7 @@ window.hwatuTranslations = {
     privacyGoverningLaw: "16. Применимое право",
     privacyGoverningLawText: "Настоящая Политика конфиденциальности регулируется законодательством Европейского Союза, в соответствии с Общим регламентом по защите данных (GDPR) и Законом о конфиденциальности потребительских данных Калифорнии (CCPA/CPRA).",
     privacyWebsite: "17. Этот сайт",
-    privacyWebsiteText: "Этот сайт запоминает выбранные язык и цветовую тему в локальном хранилище вашего браузера. Cookie, аналитика и реклама не используются. Сайт размещён на GitHub Pages и работает через Cloudflare, а видео на странице игры загружается с серверов Apple; эти поставщики получают ваш IP-адрес, чтобы доставить содержимое.",
+    privacyWebsiteText: "Этот сайт запоминает выбранные язык и цветовую тему в локальном хранилище вашего браузера. Cookie, аналитика и реклама не используются. Как и любой сайт, его доставляет хостинг-провайдер, а видео на странице игры загружается с серверов Apple; они получают ваш IP-адрес, чтобы доставить содержимое.",
 
     // Terms of Use / EULA
     hwatuTermsTitle: "Лицензионное соглашение (EULA) - Хато",
