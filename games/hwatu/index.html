@@ -24,7 +24,6 @@
   <script src="../../js/site-chrome.js"></script>
   <script src="../../js/lang.js"></script>
   <script src="../../js/screenshot-gallery.js"></script>
-  <script src="../../js/hls-video.js"></script>
 </head>
 <body data-app-name="Hwatu">
   <main>
@@ -178,30 +177,14 @@
     </section>
 
 
-    <!-- Video (to be replaced with the new trailer) -->
-    <section class="section section--alt" id="video">
-      <div class="wrap">
-        <header class="section__head section__head--center">
-          <span class="eyebrow" data-i18n="hwatuVideoEyebrow">Video</span>
-          <h2 class="section__title" data-i18n="hwatuVideoTitle">Hwatu in action</h2>
-        </header>
-        <div class="video-frame">
-          <video controls preload="none" playsinline poster="screenshots/0x0ss-1.png">
-            <source src="https://apptrailers.itunes.apple.com/itunes-assets/PurpleVideo221/v4/dc/fd/9b/dcfd9b67-c9ad-aeb1-a5f7-8136a778448c/P1127925025_default.m3u8" type="application/x-mpegURL">
-            <p data-i18n="videoNotSupported">Your browser does not support the video tag.</p>
-          </video>
-        </div>
-      </div>
-    </section>
-
-    <!-- Screenshots (to be replaced with screenshots of the current version) -->
+    <!-- Screenshots: the 3.0 promo slides, per language (Unity repo, Publishing/Promo/06_site/make_site.py) -->
     <section class="section" id="screenshots">
       <div class="wrap">
         <header class="section__head">
           <span class="eyebrow" data-i18n="hwatuScreenshotsEyebrow">Screenshots</span>
           <h2 class="section__title" data-i18n="hwatuScreenshotsTitle">Take a peek</h2>
         </header>
-        <div class="screenshots-grid screenshots-grid--landscape" data-gallery="screenshots/" data-pattern="0x0ss" data-count="9"></div>
+        <div class="screenshots-grid" data-gallery="screenshots/" data-lang-folders data-pattern="" data-ext="jpg" data-count="6"></div>
       </div>
     </section>
 

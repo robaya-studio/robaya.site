@@ -1,6 +1,9 @@
 // Screenshot Gallery Component
 // Usage: Add data-gallery="folder-path" to the screenshots-container
 // Example: <div class="screenshots-grid" data-gallery="locales/screenshots/">
+// Options: data-pattern (file name stem, default 0x0ss; empty with data-ext gives 1.jpg, 2.jpg, …),
+// data-count, data-ext (default png), data-lang-folders — files live in <folder><lang>/ and are
+// swapped when the site language changes (robaya:languagechange from lang.js).
 
 class ScreenshotGallery {
   constructor() {
@@ -39,8 +42,14 @@ class ScreenshotGallery {
   }
 
   initGallery(container) {
-    const folderPath = container.getAttribute('data-gallery');
-    const screenshotPattern = container.getAttribute('data-pattern') || '0x0ss';
+    const baseFolder = container.getAttribute('data-gallery');
+    const byLanguage = container.hasAttribute('data-lang-folders');
+    const ext = container.getAttribute('data-ext') || 'png';
+    const folderFor = (lang) => (byLanguage ? `${baseFolder}${lang}/` : baseFolder);
+    const folderPath = folderFor(document.documentElement.lang || 'en');
+    const screenshotPattern = container.hasAttribute('data-pattern')
+      ? container.getAttribute('data-pattern')
+      : '0x0ss';
     const startIndex = 1;
     const screenshotCount = parseInt(container.getAttribute('data-count')) || 9;
     
@@ -77,15 +86,28 @@ class ScreenshotGallery {
       if (startIndex === 0) {
         // Standard pattern: 0x0ss.png, 0x0ss-2.png, 0x0ss-3.png, etc.
         filename = i === 0 ? `${screenshotPattern}.png` : `${screenshotPattern}-${i + 1}.png`;
+      } else if (screenshotPattern === '') {
+        // Bare numbers: 1.jpg, 2.jpg, …
+        filename = `${index}.${ext}`;
       } else {
         // Custom start index: 0x0ss-10.png, 0x0ss-11.png, etc.
-        filename = `${screenshotPattern}-${index}.png`;
+        filename = `${screenshotPattern}-${index}.${ext}`;
       }
       
       const screenshotItem = document.createElement('div');
       screenshotItem.className = 'screenshot-item';
       screenshotItem.innerHTML = `<img src="${folderPath}${filename}" alt="Game Screenshot ${i + 1}" data-screenshot="${filename}">`;
       carousel.appendChild(screenshotItem);
+    }
+
+    // Language folders: the lightbox reads the same <img> elements, so swapping their src is enough
+    if (byLanguage) {
+      document.addEventListener('robaya:languagechange', (e) => {
+        const folder = folderFor(e.detail.lang);
+        carousel.querySelectorAll('img[data-screenshot]').forEach((img) => {
+          img.src = folder + img.getAttribute('data-screenshot');
+        });
+      });
     }
 
     // Initialize screenshot click handlers
