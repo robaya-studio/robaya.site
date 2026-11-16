@@ -29,7 +29,8 @@ python3 -m http.server 8000
 Injects the sticky header (brand + breadcrumb to the app, nav to the current app's or the
 site's privacy/terms, theme toggle, EN/RU switch) and the footer, and turns every
 `<span data-icon="name">` into an inline SVG from its `ICONS` table. Page context comes from
-the URL (`/games/`, `privacy.html`, `terms.html`) and `<body data-app-name>`. Must load before
+the URL (`/games/`, `privacy.html`, `terms.html`, `delete-account.html`) and `<body data-app-name>`;
+`<body data-account-deletion>` (Hwatu) adds the app's deletion page to the footer. Must load before
 `lang.js` so the injected `data-i18n` elements get translated.
 
 ### Localization (`js/lang.js`)

@@ -1128,7 +1128,8 @@ main {
   margin-top: 12px;
 }
 
-.legal ul {
+.legal ul,
+.legal ol {
   margin: 12px 0;
   padding-left: 22px;
 }
@@ -1139,6 +1140,10 @@ main {
 
 .legal li::marker {
   color: var(--accent);
+}
+
+.legal ol li::marker {
+  font-weight: 700;
 }
 
 .legal a {

@@ -68,6 +68,7 @@
       this.isAppPage = this.path.includes('/games/');
       this.isPrivacy = this.path.endsWith('/privacy.html');
       this.isTerms = this.path.endsWith('/terms.html');
+      this.isDeleteAccount = this.path.endsWith('/delete-account.html');
       this.root = this.isAppPage ? '../../' : '';
       document.addEventListener('DOMContentLoaded', () => this.render());
     }
@@ -162,13 +163,17 @@
 
       const links = footer.querySelector('.footer-links');
       if (this.isAppPage) {
-        if (this.isPrivacy || this.isTerms) {
+        if (this.isPrivacy || this.isTerms || this.isDeleteAccount) {
           links.appendChild(this.link('index.html', 'backToApp', '← Back', false));
         }
         links.appendChild(this.link(`${this.root}index.html`, 'allApps', 'All apps', false));
       }
       links.appendChild(this.link('privacy.html', 'privacy', 'Privacy Policy', this.isPrivacy));
       links.appendChild(this.link('terms.html', 'terms', 'Terms of Use', this.isTerms));
+      // An app with account deletion (<body data-account-deletion>, Hwatu) links its deletion page
+      if (this.isAppPage && document.body.hasAttribute('data-account-deletion')) {
+        links.appendChild(this.link('delete-account.html', 'hwatuDeleteAccountNav', 'Delete account', this.isDeleteAccount));
+      }
 
       const mail = document.createElement('a');
       mail.href = 'mailto:robaya.studio@gmail.com';
