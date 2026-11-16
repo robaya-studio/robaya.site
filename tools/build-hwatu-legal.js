@@ -1,4 +1,4 @@
-// Generates games/hwatu/privacy.html and terms.html from the English strings in
+// Generates games/hwatu/privacy.html, terms.html and delete-account.html from the English strings in
 // games/hwatu/locales/translations.js, so the static fallback text matches the translations.
 // Run after editing the agreements in that file:   node tools/build-hwatu-legal.js
 // The page structure (which keys, in which order) is the spec below; the script fails if an
@@ -95,7 +95,7 @@ const privacySpec = [
   ['ul', 'privacyAccessRequest', 'privacyDeletionRequest', 'privacyCorrectionRequest', 'privacyOptOut'],
   'p:privacyCPRAShareText', 'p:privacyExerciseCCPARights',
   'h2:privacyDataSharing', 'p:privacyDataSharingText',
-  ['ul', 'privacyShareFirebase', 'privacyShareSignIn', 'privacyShareAdNetworks', 'privacyShareCmp', 'privacyShareStores',
+  ['ul', 'privacyShareFirebase', 'privacyShareSignIn', 'privacyShareAdNetworks', 'privacyShareCmp', 'privacyShareStores', 'privacyShareSlack',
     'privacyLegalRequirements'],
   'p:privacyProcessorsText', 'p:privacyThirdPartyPoliciesText',
   ['ul',
@@ -105,6 +105,7 @@ const privacySpec = [
   'h2:privacyAdvertising', 'p:privacyAdvertisingText',
   'h2:privacyCloudSave', 'p:privacyCloudSaveText', 'p:privacyCloudSaveLegacyText',
   'h2:privacyRetention', 'p:privacyRetentionText',
+  '<p><a href="delete-account.html" data-i18n="deleteAccountLink">How to delete your account and data</a></p>',
   'h2:privacyTransfers', 'p:privacyTransfersText',
   'h2:privacyDataSecurity', 'p:privacyDataSecurityText',
   'h2:privacyChildren', 'p:privacyChildrenText',
@@ -138,11 +139,29 @@ const termsSpec = [
   '<p><a href="mailto:robaya.studio@gmail.com">robaya.studio@gmail.com</a></p>'
 ];
 
+// The page linked from Google Play's Data safety ("Delete data URL"): the steps first, then
+// what is deleted and what is kept. Facts must match privacyRetentionText.
+const deleteSpec = [
+  'p:deleteAccountIntro',
+  'h2:deleteAccountInGame',
+  ['ul', 'deleteAccountStep1', 'deleteAccountStep2', 'deleteAccountStep3'],
+  'h2:deleteAccountByEmail', 'p:deleteAccountByEmailText',
+  '<p><a href="mailto:robaya.studio@gmail.com">robaya.studio@gmail.com</a></p>',
+  'h2:deleteAccountDeleted',
+  ['ul', 'deleteAccountDeleted1', 'deleteAccountDeleted2', 'deleteAccountDeleted3', 'deleteAccountDeleted4',
+    'deleteAccountDeleted5'],
+  'h2:deleteAccountKept',
+  ['ul', 'deleteAccountKept1', 'deleteAccountKept2'],
+  'h2:deleteAccountSubscription', 'p:deleteAccountSubscriptionText', 'p:deleteAccountUninstallText',
+  '<p><a href="privacy.html" data-i18n="privacy">Privacy Policy</a></p>'
+];
+
 // Every key of the agreements must be on the page — a key added to translations but not to
 // the spec would silently never be shown.
-const used = new Set(JSON.stringify([privacySpec, termsSpec]).match(/(privacy|terms)[A-Z][A-Za-z0-9]*/g));
-const unused = Object.keys(en).filter((k) => /^(privacy|terms)[A-Z]/.test(k) && !used.has(k)
-  && !['privacyTitle', 'privacyLastUpdated', 'termsTitle', 'termsLastUpdated'].includes(k));
+const used = new Set(JSON.stringify([privacySpec, termsSpec, deleteSpec]).match(/(privacy|terms|deleteAccount)[A-Z][A-Za-z0-9]*/g));
+const unused = Object.keys(en).filter((k) => /^(privacy|terms|deleteAccount)[A-Z]/.test(k) && !used.has(k)
+  && !['privacyTitle', 'privacyLastUpdated', 'termsTitle', 'termsLastUpdated', 'deleteAccountTitle',
+    'deleteAccountMeta'].includes(k));
 if (unused.length) {
   throw new Error(`keys not placed on a page: ${unused.join(', ')}`);
 }
@@ -151,4 +170,6 @@ fs.writeFileSync(path.join(site, 'games/hwatu/privacy.html'),
   page({ titleKey: 'hwatuPrivacyTitle', h1Key: 'privacyTitle', metaKey: 'privacyLastUpdated', spec: privacySpec, canonical: 'privacy.html' }));
 fs.writeFileSync(path.join(site, 'games/hwatu/terms.html'),
   page({ titleKey: 'hwatuTermsTitle', h1Key: 'termsTitle', metaKey: 'termsLastUpdated', spec: termsSpec, canonical: 'terms.html' }));
+fs.writeFileSync(path.join(site, 'games/hwatu/delete-account.html'),
+  page({ titleKey: 'hwatuDeleteAccountTitle', h1Key: 'deleteAccountTitle', metaKey: 'deleteAccountMeta', spec: deleteSpec, canonical: 'delete-account.html' }));
 console.log('ok');
