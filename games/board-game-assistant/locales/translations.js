@@ -129,7 +129,7 @@ window['board-game-assistantTranslations'] = {
   ru: {
     appName: "Ассистент настольных игр",
     // Game page
-    boardGamesAssistantPageTitle: "Ассистент настольных игр | Robaya",
+    boardGamesAssistantPageTitle: "Ассистент настольных игр | ROBAYA",
     boardGamesAssistantTitle: "Ассистент настольных игр",
     boardGamesAssistantSubtitle: "Ваш цифровой помощник для настольных игр",
     appDescription: "Ультимативный цифровой помощник для любителей настольных игр уже доступен! Создавайте команды, отслеживайте очки, управляйте таймерами и улучшайте ваши настольные игровые сессии с нашим комплексным набором инструментов.",

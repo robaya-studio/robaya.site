@@ -1,4 +1,4 @@
-/* Robaya — site styles.
+/* ROBAYA — site styles.
    One component vocabulary for every page: site header/footer (injected by js/site-chrome.js),
    .hero, .section, .card / .feature, .store-badges, .screenshots-grid, .legal.
    Colours are tokens on :root; js/theme.js sets [data-theme] on <html>. Without JS the

@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 A static marketing site (GitHub Pages behind Cloudflare, custom domain `robaya.studio` via `CNAME`)
-for the mobile games/apps of Robaya Studio: a home page, one landing page per app, per-app
+for the mobile games/apps of ROBAYA Studio: a home page, one landing page per app, per-app
 Privacy Policy / Terms pages, and the site's own privacy/terms. Pure HTML/CSS/vanilla JS — no
 build step, no package.json, no framework. `README.md` (Russian) is the how-to; this file is
 the architecture.
@@ -49,8 +49,9 @@ Per-app accent: `<body data-accent="sudoku|board-games">` (Hwatu uses the defaul
 ### No cookies
 The site sets no cookies and has no analytics; it only keeps language/theme in localStorage.
 There was a cookie banner — removed because nothing was gated on it. Store badges and hls.js are
-self-hosted (`img/badges/`, `js/vendor/`); the only third-party request is the Apple-hosted
-trailer on the Hwatu page. Adding analytics, embeds or fonts from a CDN changes what the
+self-hosted (`img/badges/`, `js/vendor/`); the site makes no third-party requests now — the
+Apple-hosted trailer was removed from the Hwatu page (a new video comes later; the privacy pages
+still mention the trailer until then). Adding analytics, embeds or fonts from a CDN changes what the
 privacy pages (site's and Hwatu's section 17) say — update them in the same change.
 
 ### Hwatu agreements
@@ -69,8 +70,13 @@ versions. Never edit agreement texts on `master` directly: a published version m
 silently.
 
 ### Screenshots (`js/screenshot-gallery.js`)
-`data-gallery="<path>"` + `data-pattern` (default `0x0ss`) + `data-count`; files are
-`<pattern>-1.png … <pattern>-N.png`. `.screenshots-grid--landscape` for landscape shots.
+`data-gallery="<path>"` + `data-pattern` (default `0x0ss`; empty with `data-ext` → `1.jpg … N.jpg`)
++ `data-count` + `data-ext` (default `png`); files are `<pattern>-1.<ext> … <pattern>-N.<ext>`.
+`data-lang-folders` reads `<path><lang>/` and swaps the images on `robaya:languagechange`.
+`.screenshots-grid--landscape` for landscape shots. Hwatu's are the 3.0 promo slides, ru/en,
+generated in the Unity repo (`Publishing/Promo/06_site/make_site.py` with `ROBAYA_SITE` set) as
+compressed JPEG — not Git LFS: GitHub Pages deploys from the branch and would serve LFS pointer
+files instead of images.
 
 ## Conventions
 
