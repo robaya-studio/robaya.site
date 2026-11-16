@@ -105,7 +105,7 @@
       header.innerHTML = `
         <div class="wrap site-header__inner">
           <div class="brand">
-            <a class="brand__home" href="${this.root}index.html">${BRAND_MARK}<span>Robaya</span></a>
+            <a class="brand__home" href="${this.root}index.html">${BRAND_MARK}<span>ROBAYA</span></a>
           </div>
           <nav class="site-nav" aria-label="Main"></nav>
           <div class="header-actions">
@@ -156,7 +156,7 @@
       footer.className = 'site-footer';
       footer.innerHTML = `
         <div class="wrap site-footer__inner">
-          <p>© ${new Date().getFullYear()} Robaya Studio</p>
+          <p>© ${new Date().getFullYear()} ROBAYA Studio</p>
           <div class="footer-links"></div>
         </div>`;
 

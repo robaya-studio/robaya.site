@@ -14,12 +14,12 @@ window.translations = {
     badgeGooglePlaySrc: "img/badges/google-play-en.png",
 
     // Home
-    pageTitle: "Robaya — mobile games and apps",
-    metaDescription: "Robaya Studio makes mobile games and apps: Hwatu, the Korean flower card game, Sudoku Logic Quest and Board Games Assistant.",
+    pageTitle: "ROBAYA — mobile games and apps",
+    metaDescription: "ROBAYA Studio makes mobile games and apps: Hwatu, the Korean flower card game, Sudoku Logic Quest and Board Games Assistant.",
     heroEyebrow: "Independent studio",
     heroTitleA: "Small games,",
     heroTitleB: "made with care.",
-    mainSubtitle: "Robaya makes mobile games and apps for iPhone, iPad and Android — from a centuries-old Korean card game to tools for your game night.",
+    mainSubtitle: "ROBAYA makes mobile games and apps for iPhone, iPad and Android — from a centuries-old Korean card game to tools for your game night.",
     appsEyebrow: "Our apps",
     appsTitle: "Games and apps",
     appsSubtitle: "Everything we have released so far.",
@@ -45,7 +45,7 @@ window.translations = {
     contactText: "Write to us — every message is read and answered.",
 
     // Site legal pages
-    sitePrivacyPageTitle: "Privacy Policy — Robaya",
+    sitePrivacyPageTitle: "Privacy Policy — ROBAYA",
     sitePrivacyTitle: "Privacy Policy",
     sitePrivacyMeta: "Website robaya.studio — last updated: 18 October 2026",
     sitePrivacyIntro: "This policy covers the robaya.studio website. Each of our apps has its own privacy policy, which describes the data that app processes — see the links below.",
@@ -57,12 +57,12 @@ window.translations = {
     sitePrivacyContactTitle: "Contact",
     sitePrivacyContactText: "If you have questions about this policy, write to us at:",
 
-    siteTermsPageTitle: "Terms of Use — Robaya",
+    siteTermsPageTitle: "Terms of Use — ROBAYA",
     siteTermsTitle: "Terms of Use",
     siteTermsMeta: "Website robaya.studio — last updated: 18 October 2026",
     siteTermsIntro: "These terms cover the use of the robaya.studio website. Each app is used under its own license agreement — see the links below.",
     siteTermsContentTitle: "Content",
-    siteTermsContentText: "Texts, images and other materials on this website belong to Robaya Studio or are used with the permission of their owners. You may link to the website and share its pages, but may not copy its content for commercial purposes without permission. App Store and Google Play badges are trademarks of Apple Inc. and Google LLC.",
+    siteTermsContentText: "Texts, images and other materials on this website belong to ROBAYA Studio or are used with the permission of their owners. You may link to the website and share its pages, but may not copy its content for commercial purposes without permission. App Store and Google Play badges are trademarks of Apple Inc. and Google LLC.",
     siteTermsWarrantyTitle: "No warranty",
     siteTermsWarrantyText: "The website is provided as is. We try to keep its information accurate and up to date but cannot guarantee that it is complete or free of errors.",
     siteTermsAppsTitle: "App license agreements",
@@ -87,12 +87,12 @@ window.translations = {
     badgeGooglePlaySrc: "img/badges/google-play-ru.png",
 
     // Home
-    pageTitle: "Robaya — мобильные игры и приложения",
-    metaDescription: "Robaya Studio делает мобильные игры и приложения: корейскую карточную игру Хато, Судоку и Ассистент настольных игр.",
+    pageTitle: "ROBAYA — мобильные игры и приложения",
+    metaDescription: "ROBAYA Studio делает мобильные игры и приложения: корейскую карточную игру Хато, Судоку и Ассистент настольных игр.",
     heroEyebrow: "Независимая студия",
     heroTitleA: "Небольшие игры,",
     heroTitleB: "сделанные с душой.",
-    mainSubtitle: "Robaya делает мобильные игры и приложения для iPhone, iPad и Android — от старинной корейской карточной игры до помощника для вечера настолок.",
+    mainSubtitle: "ROBAYA делает мобильные игры и приложения для iPhone, iPad и Android — от старинной корейской карточной игры до помощника для вечера настолок.",
     appsEyebrow: "Наши приложения",
     appsTitle: "Игры и приложения",
     appsSubtitle: "Всё, что мы уже выпустили.",
@@ -118,7 +118,7 @@ window.translations = {
     contactText: "Напишите нам — мы читаем и отвечаем на каждое письмо.",
 
     // Site legal pages
-    sitePrivacyPageTitle: "Политика конфиденциальности — Robaya",
+    sitePrivacyPageTitle: "Политика конфиденциальности — ROBAYA",
     sitePrivacyTitle: "Политика конфиденциальности",
     sitePrivacyMeta: "Сайт robaya.studio — последнее обновление: 18 октября 2026",
     sitePrivacyIntro: "Эта политика относится к сайту robaya.studio. У каждого нашего приложения своя политика конфиденциальности, в которой описаны данные, которые оно обрабатывает, — ссылки ниже.",
@@ -130,12 +130,12 @@ window.translations = {
     sitePrivacyContactTitle: "Контакты",
     sitePrivacyContactText: "Если у вас есть вопросы об этой политике, напишите нам:",
 
-    siteTermsPageTitle: "Условия использования — Robaya",
+    siteTermsPageTitle: "Условия использования — ROBAYA",
     siteTermsTitle: "Условия использования",
     siteTermsMeta: "Сайт robaya.studio — последнее обновление: 18 октября 2026",
     siteTermsIntro: "Эти условия относятся к использованию сайта robaya.studio. Каждое приложение используется по своему лицензионному соглашению — ссылки ниже.",
     siteTermsContentTitle: "Материалы сайта",
-    siteTermsContentText: "Тексты, изображения и другие материалы сайта принадлежат Robaya Studio или используются с разрешения правообладателей. Вы можете ссылаться на сайт и делиться его страницами, но не можете копировать его материалы в коммерческих целях без разрешения. Значки App Store и Google Play — товарные знаки Apple Inc. и Google LLC.",
+    siteTermsContentText: "Тексты, изображения и другие материалы сайта принадлежат ROBAYA Studio или используются с разрешения правообладателей. Вы можете ссылаться на сайт и делиться его страницами, но не можете копировать его материалы в коммерческих целях без разрешения. Значки App Store и Google Play — товарные знаки Apple Inc. и Google LLC.",
     siteTermsWarrantyTitle: "Отказ от гарантий",
     siteTermsWarrantyText: "Сайт предоставляется «как есть». Мы стараемся поддерживать информацию точной и актуальной, но не можем гарантировать её полноту и отсутствие ошибок.",
     siteTermsAppsTitle: "Лицензионные соглашения приложений",

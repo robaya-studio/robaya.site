@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 A static marketing site (GitHub Pages behind Cloudflare, custom domain `robaya.studio` via `CNAME`)
-for the mobile games/apps of Robaya Studio: a home page, one landing page per app, per-app
+for the mobile games/apps of ROBAYA Studio: a home page, one landing page per app, per-app
 Privacy Policy / Terms pages, and the site's own privacy/terms. Pure HTML/CSS/vanilla JS — no
 build step, no package.json, no framework. `README.md` (Russian) is the how-to; this file is
 the architecture.
