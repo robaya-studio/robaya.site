@@ -1,87 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pageTitle">Robaya — mobile games and apps</title>
+  <meta name="description" data-i18n-content="metaDescription" content="Robaya Studio makes mobile games and apps: Hwatu, the Korean flower card game, Sudoku Logic Quest and Board Games Assistant.">
+  <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0e0c" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Robaya">
+  <meta property="og:title" content="Robaya — mobile games and apps">
+  <meta property="og:url" content="https://robaya.studio/">
+  <meta property="og:image" content="https://robaya.studio/games/hwatu/AppIcon.png">
+  <link rel="canonical" href="https://robaya.studio/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/translations.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/site-chrome.js"></script>
   <script src="js/lang.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/cookie-consent.js"></script>
-  <title data-i18n="pageTitle">Robaya - Mobile Games & Apps</title>
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <h1 data-i18n="mainTitle">Welcome to Robaya</h1>
-      <p class="hero-subtitle" data-i18n="mainSubtitle">Discover amazing mobile games and applications</p>
-    </header>
+  <main>
+    <section class="hero hero--home">
+      <div class="wrap">
+        <span class="eyebrow reveal" data-i18n="heroEyebrow">Independent studio</span>
+        <h1 class="hero__title reveal reveal--2">
+          <span data-i18n="heroTitleA">Small games,</span>
+          <span class="muted" data-i18n="heroTitleB">made with care.</span>
+        </h1>
+        <p class="hero__lead reveal reveal--3" data-i18n="mainSubtitle">Robaya makes mobile games and apps for iPhone, iPad and Android — from a centuries-old Korean card game to tools for your game night.</p>
+      </div>
+    </section>
 
-    <section class="games-section">
-      <h2 data-i18n="gamesTitle">Our Games & Apps</h2>
-      <p class="section-subtitle" data-i18n="gamesSubtitle">Choose from our collection of entertaining and useful applications</p>
-      
-      <div class="games-grid">
-        <!-- Sudoku Game -->
-        <div class="game-card">
-          <a href="games/sudoku/" class="game-card-link">
-            <img src="games/sudoku/AppIcon.png" alt="Sudoku App Icon" class="game-icon">
-            <h3 data-i18n="sudokuTitle">Sudoku Logic Quest</h3>
-            <p data-i18n="sudokuDescription">Brain training puzzle game with multiple difficulty levels</p>
-            <div class="game-features">
-              <span data-i18n="sudokuFeatures">Features: Multiple levels, Daily challenges, Progress tracking</span>
+    <section class="section section--flush-top" id="apps">
+      <div class="wrap">
+        <div class="grid grid--2">
+          <!-- Hwatu -->
+          <article class="card app-card app-card--featured">
+            <img class="app-card__icon" src="games/hwatu/AppIcon.png" alt="Hwatu" width="148" height="148">
+            <div>
+              <h3>
+                <a href="games/hwatu/" data-i18n="hwatuTitle">Hwatu</a>
+                <span class="badge-new" data-i18n="updatedBadge">Big update</span>
+              </h3>
+              <p data-i18n="hwatuDescription">The Korean game of flower cards: play bots offline, players from around the world online, or friends at your own table.</p>
+              <ul class="tags">
+                <li data-i18n="hwatuTag1">Card game</li>
+                <li data-i18n="hwatuTag2">Online &amp; offline</li>
+                <li data-i18n="hwatuTag3">iOS · Android</li>
+              </ul>
+              <div class="store-badges store-badges--sm">
+                <a class="store-badge" href="https://apps.apple.com/app/id6563145829" target="_blank" rel="noopener">
+                  <img src="img/badges/app-store.svg" alt="Download on the App Store" data-i18n="badgeAppStore" height="40">
+                </a>
+                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.at.hwatu" target="_blank" rel="noopener">
+                  <img src="img/badges/google-play-en.png" alt="Get it on Google Play" data-i18n="badgeGooglePlay" data-i18n-src="badgeGooglePlaySrc" height="40">
+                </a>
+              </div>
             </div>
-          </a>
-          <div class="game-actions">
-            <a href="https://apps.apple.com/app/id6751447827" class="download-btn" target="_blank" rel="noopener">
-              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
-            </a>
-          </div>
-        </div>
+          </article>
 
-        <!-- Hwatu Game -->
-        <div class="game-card">
-          <a href="games/hwatu/" class="game-card-link">
-            <img src="games/hwatu/AppIcon.png" alt="Hwatu App Icon" class="game-icon">
-            <h3 data-i18n="hwatuTitle">Hwatu</h3>
-            <p data-i18n="hwatuDescription">Classic Korean card game with traditional designs</p>
-            <div class="game-features">
-              <span data-i18n="hwatuFeatures">Features: Traditional cards, Multiple modes, Cultural experience</span>
+          <!-- Sudoku -->
+          <article class="card app-card">
+            <img class="app-card__icon" src="games/sudoku/AppIcon.png" alt="Sudoku Logic Quest" width="84" height="84">
+            <div>
+              <h3><a href="games/sudoku/" data-i18n="sudokuTitle">Sudoku Logic Quest</a></h3>
+              <p data-i18n="sudokuDescription">Brain training puzzle game with multiple difficulty levels and daily challenges.</p>
+              <ul class="tags">
+                <li data-i18n="sudokuTag1">Puzzle</li>
+                <li data-i18n="sudokuTag2">iOS</li>
+              </ul>
+              <span class="app-card__more"><span data-i18n="learnMore">Learn more</span><span data-icon="arrow"></span></span>
             </div>
-          </a>
-          <div class="game-actions">
-            <div class="download-buttons">
-              <a href="https://apps.apple.com/app/id6563145829" class="download-btn" target="_blank" rel="noopener">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.at.hwatu" class="download-btn" target="_blank" rel="noopener">
-                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="60">
-                <span class="soon-badge" data-i18n="soonBadge">Soon</span>
-              </a>
-            </div>
-          </div>
-        </div>
+          </article>
 
-
-        <!-- Board Games Assistant -->
-        <div class="game-card">
-          <a href="games/board-game-assistant/" class="game-card-link">
-            <img src="games/board-game-assistant/AppIcon.png" alt="Board Games Assistant App Icon" class="game-icon">
-            <h3 data-i18n="boardGamesAssistantTitle">Board Games Assistant</h3>
-            <p data-i18n="boardGamesAssistantDescription">Your digital companion for tabletop gaming</p>
-            <div class="game-features">
-              <span data-i18n="boardGamesAssistantFeatures">Features: Team creation, Score tracking, Timer, Calculator, Randomizer</span>
+          <!-- Board Games Assistant -->
+          <article class="card app-card">
+            <img class="app-card__icon" src="games/board-game-assistant/AppIcon.png" alt="Board Games Assistant" width="84" height="84">
+            <div>
+              <h3><a href="games/board-game-assistant/" data-i18n="boardGamesAssistantTitle">Board Games Assistant</a></h3>
+              <p data-i18n="boardGamesAssistantDescription">Your companion for tabletop gaming: teams, scores, timer, dice, coin flip, randomizer and a calculator.</p>
+              <ul class="tags">
+                <li data-i18n="boardGamesAssistantTag1">Utility</li>
+                <li data-i18n="boardGamesAssistantTag2">iOS</li>
+              </ul>
+              <span class="app-card__more"><span data-i18n="learnMore">Learn more</span><span data-icon="arrow"></span></span>
             </div>
-          </a>
-          <div class="game-actions">
-            <a href="https://apps.apple.com/app/id6749201921" class="download-btn" target="_blank" rel="noopener">
-              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
-            </a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
-  </div>
+
+    <section class="section section--alt">
+      <div class="wrap cta">
+        <h2 class="section__title" data-i18n="contactTitle">Questions or ideas?</h2>
+        <p class="section__lead" data-i18n="contactText">Write to us — every message is read and answered.</p>
+        <p class="cta__actions">
+          <a class="button" href="mailto:robaya.studio@gmail.com">
+            <span data-icon="mail"></span>robaya.studio@gmail.com
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,6 +1,7 @@
 // Sudoku Game Localization
 window.sudokuTranslations = {
   en: {
+    appName: "Sudoku",
     // Game page
     sudokuPageTitle: "Sudoku Logic Quest",
     sudokuTitle: "Sudoku Logic Quest",
@@ -72,6 +73,7 @@ window.sudokuTranslations = {
   },
   
   ru: {
+    appName: "Судоку",
     // Game page
     sudokuPageTitle: "Судоку Логическая Головоломка",
     sudokuTitle: "Судоку Логическая Головоломка",

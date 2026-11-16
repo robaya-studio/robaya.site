@@ -1,27 +1,31 @@
-// Generic HLS video fallback. Any <video> containing a
-// <source type="application/x-mpegURL"> gets hls.js attached automatically
-// on browsers without native HLS support (i.e. everything but Safari).
+// HLS video fallback. Any <video> containing a <source type="application/x-mpegURL"> gets hls.js
+// attached on browsers without native HLS (everything but Safari). The library is served from
+// this site (js/vendor/), pinned to one version, and loaded only when a page needs it.
 document.addEventListener('DOMContentLoaded', () => {
-  const videos = document.querySelectorAll('video > source[type="application/x-mpegURL"]');
+  const sources = document.querySelectorAll('video > source[type="application/x-mpegURL"]');
+  if (sources.length === 0) {
+    return;
+  }
 
-  videos.forEach((source) => {
-    const video = source.closest('video');
+  const pending = Array.from(sources).filter((source) => {
+    return !source.closest('video').canPlayType('application/vnd.apple.mpegurl');
+  });
+  if (pending.length === 0) {
+    return;
+  }
 
-    if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      console.log('✅ Native HLS support detected');
+  const base = window.location.pathname.includes('/games/') ? '../../' : '';
+  const script = document.createElement('script');
+  script.src = `${base}js/vendor/hls-1.5.20.min.js`;
+  script.onload = () => {
+    if (!window.Hls || !window.Hls.isSupported()) {
       return;
     }
-
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
-    script.onload = () => {
-      if (window.Hls && window.Hls.isSupported()) {
-        const hls = new window.Hls();
-        hls.loadSource(source.src);
-        hls.attachMedia(video);
-        console.log('✅ HLS.js loaded and attached');
-      }
-    };
-    document.head.appendChild(script);
-  });
+    pending.forEach((source) => {
+      const hls = new window.Hls();
+      hls.loadSource(source.src);
+      hls.attachMedia(source.closest('video'));
+    });
+  };
+  document.head.appendChild(script);
 });
