@@ -60,6 +60,14 @@ in `privacyLastUpdated` / `termsLastUpdated` must match the game's (Unity repo:
 `Assets/ScriptableObjects/AgreementsSettings.asset` and Remote Config `agreements`): raising it
 there makes every player accept the documents again.
 
+Each new version of the Hwatu agreements is prepared on its own branch, named after the
+versions it publishes: `hwatu-privacy-<x.y.z>-terms-<x.y.z>` (e.g.
+`hwatu-privacy-1.5.0-terms-1.4.0`), with the game-page changes of the same release on it too.
+It is merged into `master` (`--no-ff`) when that version is published — the merge is the
+publication — and right after it the game's Remote Config `agreements` is raised to the same
+versions. Never edit agreement texts on `master` directly: a published version must not change
+silently.
+
 ### Screenshots (`js/screenshot-gallery.js`)
 `data-gallery="<path>"` + `data-pattern` (default `0x0ss`) + `data-count`; files are
 `<pattern>-1.png … <pattern>-N.png`. `.screenshots-grid--landscape` for landscape shots.
