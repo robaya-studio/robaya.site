@@ -19,16 +19,17 @@ const t = (key) => {
   return esc(en[key]);
 };
 
-// Spec: 'h2:key', 'p:key', ['ul', key...], raw html strings starting with '<'
+// Spec: 'h2:key', 'p:key', ['ul' | 'ol', key...], raw html strings starting with '<'
 function render(spec) {
   const out = [];
   for (const item of spec) {
     if (Array.isArray(item)) {
-      out.push('      <ul>');
+      const list = item[0];
+      out.push(`      <${list}>`);
       for (const key of item.slice(1)) {
         out.push(key.startsWith('<') ? `        ${key}` : `        <li data-i18n="${key}">${t(key)}</li>`);
       }
-      out.push('      </ul>');
+      out.push(`      </${list}>`);
     } else if (item.startsWith('<')) {
       out.push(`      ${item}`);
     } else {
@@ -61,7 +62,7 @@ function page({ titleKey, h1Key, metaKey, spec, canonical }) {
   <script src="../../js/site-chrome.js"></script>
   <script src="../../js/lang.js"></script>
 </head>
-<body data-app-name="Hwatu">
+<body data-app-name="Hwatu" data-account-deletion>
   <main class="wrap">
     <article class="legal">
       <header class="legal__head">
@@ -144,7 +145,7 @@ const termsSpec = [
 const deleteSpec = [
   'p:deleteAccountIntro',
   'h2:deleteAccountInGame',
-  ['ul', 'deleteAccountStep1', 'deleteAccountStep2', 'deleteAccountStep3'],
+  ['ol', 'deleteAccountStep1', 'deleteAccountStep2', 'deleteAccountStep3'],
   'h2:deleteAccountByEmail', 'p:deleteAccountByEmailText',
   '<p><a href="mailto:robaya.studio@gmail.com">robaya.studio@gmail.com</a></p>',
   'h2:deleteAccountDeleted',
